@@ -3666,10 +3666,10 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
-[node name="Player2" parent="." instance=ExtResource("9_mqjri")]
+[node name="Player" parent="." instance=ExtResource("9_mqjri")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.733822, 0.728463, -0.724972)
 
-[connection signal="button_pressed" from="XROrigin3D/LeftHand" to="Player2" method="_on_left_hand_button_pressed"]
-[connection signal="input_vector2_changed" from="XROrigin3D/LeftHand" to="Player2" method="_on_left_hand_input_vector_2_changed"]
-[connection signal="button_pressed" from="XROrigin3D/RightHand" to="Player2" method="_on_right_hand_button_pressed"]
+[connection signal="button_pressed" from="XROrigin3D/LeftHand" to="Player" method="_on_left_hand_button_pressed"]
+[connection signal="input_vector2_changed" from="XROrigin3D/LeftHand" to="Player" method="_on_left_hand_input_vector_2_changed"]
+[connection signal="button_pressed" from="XROrigin3D/RightHand" to="Player" method="_on_right_hand_button_pressed"]
 [connection signal="toggled" from="ARToggle" to="." method="_on_detector_toggled"]

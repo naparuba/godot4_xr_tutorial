@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 
+@onready var animated_sprite_3d: AnimatedSprite3D = $AnimatedSprite3D
+
 const SPEED = 0.5
 const JUMP_VELOCITY = 4.5
 
@@ -29,8 +31,25 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	_set_animation()
+
 	move_and_slide()
 
+
+func _set_animation():
+	if velocity.z > 0.01: animated_sprite_3d.flip_h = false
+	elif velocity.z < -0.01: animated_sprite_3d.flip_h = true
+	
+	if velocity:
+		if abs(velocity.z) > abs(velocity.x):  # going more on the top/down
+			if velocity.z > 0:
+				animated_sprite_3d.play("down")
+			else:
+				animated_sprite_3d.play("up")
+		else:
+			animated_sprite_3d.play("left")
+	else: 
+		animated_sprite_3d.play("idle")
 
 func _on_left_hand_button_pressed(name: String) -> void:
 	print('LEFT BUTTON IS PRESSED ', name) # Replace with function body.

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjws5ros818l4"
-path="res://.godot/imported/map-1.png-5c0869b9ada5af7130877f46ad3cc921.ctex"
+uid="uid://c5s18w78b3twt"
+path="res://.godot/imported/walk.png-92fa092bb18fd441f0d0cd2a108c95a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/map-1.png"
-dest_files=["res://.godot/imported/map-1.png-5c0869b9ada5af7130877f46ad3cc921.ctex"]
+source_file="res://player/top-down/walk.png"
+dest_files=["res://.godot/imported/walk.png-92fa092bb18fd441f0d0cd2a108c95a2.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
