@@ -19,6 +19,9 @@ func _ready():
 		$ARToggle.on = xr_interface.environment_blend_mode != XRInterface.XR_ENV_BLEND_MODE_OPAQUE
 	else:
 		print("OpenXR not initialized, please check if your headset is connected")
+		
+	$"world-1/Player".set_camera($XROrigin3D/XRCamera3D)
+	
 
 func switch_to_ar() -> bool:
 	if xr_interface:

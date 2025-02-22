@@ -9,6 +9,13 @@ const JUMP_VELOCITY = 4.5
 var joy_stick_x : float = 0.0  # -1 =-> 1
 var joy_stick_y : float = 0.0  # -1 =-> 1
 
+var camera: XRCamera3D = null
+
+func set_camera(camera: XRCamera3D):
+	print('Setting camera ', camera)
+	self.camera = camera
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -23,7 +30,8 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	#var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	var direction := (transform.basis * Vector3(joy_stick_x, 0, joy_stick_y)).normalized()
+	#var direction := (transform.basis * Vector3(joy_stick_x, 0, joy_stick_y)).normalized()
+	var direction := _get_movement_direction()  # / camera
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -35,6 +43,25 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
+func _get_movement_direction() -> Vector3:
+	# Récupérer la base de la caméra pour transformer le mouvement
+	var camera_basis := camera.global_transform.basis
+
+	# La direction avant/arrière de la caméra (projetée sur le sol)
+	var forward := -camera_basis.z
+	forward.y = 0  # On garde le mouvement au sol
+	forward = forward.normalized()
+
+	# La direction droite/gauche de la caméra
+	var right := camera_basis.x
+	right.y = 0  # On garde le mouvement au sol
+	right = right.normalized()
+
+	# Calculer le vecteur direction avec l'entrée du joystick
+	var movement := (right * joy_stick_x + forward * joy_stick_y).normalized()
+	return movement
+	
 
 func _set_animation():
 	if velocity.z > 0.01: animated_sprite_3d.flip_h = false

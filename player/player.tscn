@@ -150,3 +150,7 @@ visible = false
 [node name="Body" type="MeshInstance3D" parent="Model"]
 mesh = SubResource("CapsuleMesh_oit5b")
 surface_material_override/0 = SubResource("StandardMaterial3D_amytl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.569874, 0)
+light_energy = 0.1
