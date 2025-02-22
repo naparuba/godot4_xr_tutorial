@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0t1yg73t6p5o"]
+
+[ext_resource type="PackedScene" uid="uid://bsjp4mfq0c7tc" path="res://resources/3d/sol/sol-1.gltf" id="1_et8ah"]
+[ext_resource type="PackedScene" uid="uid://b2qinh43aijxt" path="res://resources/3d/water/water-1.gltf" id="2_ww1qo"]
+[ext_resource type="PackedScene" uid="uid://dwm78hjmrshkw" path="res://resources/3d/water/water-2.gltf" id="3_idunp"]
+[ext_resource type="PackedScene" uid="uid://cmxr38jiyov2l" path="res://resources/3d/bouche-egout/bouche-egout.gltf" id="4_4m7e1"]
+[ext_resource type="PackedScene" uid="uid://da8sh25n2lle4" path="res://resources/3d/maison-orange-1/maison-orange-1.gltf" id="5_jefyb"]
+[ext_resource type="PackedScene" uid="uid://30nivvwy8bv6" path="res://resources/3d/bord-eau/bord-eau-1.gltf" id="6_shemr"]
+[ext_resource type="PackedScene" uid="uid://cq2c2otbe7urb" path="res://resources/3d/maison-bleue-1/maison-bleue-1.gltf" id="7_4v2o8"]
+
+[node name="meshlib" type="Node3D"]
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_et8ah")]
+
+[node name="blockbench_export2" parent="." instance=ExtResource("2_ww1qo")]
+
+[node name="blockbench_export3" parent="." instance=ExtResource("3_idunp")]
+
+[node name="blockbench_export5" parent="." instance=ExtResource("4_4m7e1")]
+
+[node name="blockbench_export6" parent="." instance=ExtResource("5_jefyb")]
+
+[node name="blockbench_export4" parent="." instance=ExtResource("6_shemr")]
+
+[node name="blockbench_export7" parent="." instance=ExtResource("7_4v2o8")]
