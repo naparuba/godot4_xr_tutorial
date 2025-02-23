@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8ewjwumc1s6t"
-path.s3tc="res://.godot/imported/bouche-egout_0.png-1f651554df48bfc9ae2bd3b55d9053ad.s3tc.ctex"
-path.etc2="res://.godot/imported/bouche-egout_0.png-1f651554df48bfc9ae2bd3b55d9053ad.etc2.ctex"
+uid="uid://c8af5g2nsdgl"
+path.s3tc="res://.godot/imported/bouche-egout_1.png-8d5c6594436436d714213a0417d36763.s3tc.ctex"
+path.etc2="res://.godot/imported/bouche-egout_1.png-8d5c6594436436d714213a0417d36763.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9e6294fa3021f4e348b00d575b97a3dc"
+"md5": "628a8a66fb543e555f4c2a87a26d2dfe"
 }
 
 [deps]
 
-source_file="res://resources/3d/bouche-egout/bouche-egout_0.png"
-dest_files=["res://.godot/imported/bouche-egout_0.png-1f651554df48bfc9ae2bd3b55d9053ad.s3tc.ctex", "res://.godot/imported/bouche-egout_0.png-1f651554df48bfc9ae2bd3b55d9053ad.etc2.ctex"]
+source_file="res://resources/3d/bouche-egout/bouche-egout_1.png"
+dest_files=["res://.godot/imported/bouche-egout_1.png-8d5c6594436436d714213a0417d36763.s3tc.ctex", "res://.godot/imported/bouche-egout_1.png-8d5c6594436436d714213a0417d36763.etc2.ctex"]
 
 [params]
 
