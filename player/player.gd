@@ -41,6 +41,8 @@ func _physics_process(delta: float) -> void:
 
 	_set_animation()
 
+	_look_at_camera()
+
 	move_and_slide()
 
 
@@ -63,22 +65,42 @@ func _get_movement_direction() -> Vector3:
 	return movement
 	
 
-func _set_animation():
-	if velocity.z > 0.01: animated_sprite_3d.flip_h = false
-	elif velocity.z < -0.01: animated_sprite_3d.flip_h = true
-	
-	if velocity:
-		if abs(velocity.z) > abs(velocity.x):  # going more on the top/down
-			if velocity.z > 0:
-				animated_sprite_3d.play("down")
-			else:
-				animated_sprite_3d.play("up")
+func _set_animation():  # relative to the camera
+	if camera:
+		# Transformer le mouvement dans l'espace de la caméra
+		var camera_basis := camera.global_transform.basis
+		var local_velocity := camera_basis.inverse() * velocity
+		
+		# Déterminer la direction dominante du mouvement
+		if local_velocity.length() > 0.01:
+			if abs(local_velocity.z) > abs(local_velocity.x):  # Mouvement avant/arrière dominant
+				if local_velocity.z < 0:
+					animated_sprite_3d.play("up")  # Avance vers la caméra
+				else:
+					animated_sprite_3d.play("down")    # Recule (caméra derrière)
+			else:  # Mouvement gauche/droite dominant
+				if local_velocity.x < 0:
+					animated_sprite_3d.play("left")
+					animated_sprite_3d.flip_h = false
+				else:
+					# animated_sprite_3d.play("right")
+					animated_sprite_3d.play("left")
+					animated_sprite_3d.flip_h = true
+					
 		else:
-			animated_sprite_3d.play("left")
-	else: 
-		animated_sprite_3d.play("idle")
+			animated_sprite_3d.play("idle")  # Aucun mouvement
 
 
+func _look_at_camera():
+	if camera:
+		# Obtenir la direction entre le sprite et la caméra
+		var direction = (camera.global_transform.origin - animated_sprite_3d.global_transform.origin).normalized()
+		
+		# On garde uniquement la rotation horizontale (Y)
+		direction.y = 0  # Ignore la hauteur pour éviter que le sprite se penche
+		
+		# Appliquer la rotation pour faire face à la caméra
+		animated_sprite_3d.look_at(animated_sprite_3d.global_transform.origin + direction, Vector3.UP)
 
 
 func _on_left_hand_input_vector_2_changed(name: String, value: Vector2) -> void:
