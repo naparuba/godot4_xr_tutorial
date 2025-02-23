@@ -78,12 +78,7 @@ func _set_animation():
 	else: 
 		animated_sprite_3d.play("idle")
 
-func _on_left_hand_button_pressed(name: String) -> void:
-	print('LEFT BUTTON IS PRESSED ', name) # Replace with function body.
 
-
-func _on_right_hand_button_pressed(name: String) -> void:
-	print('RIGHT BUTTON IS PRESSED', name)
 
 
 func _on_left_hand_input_vector_2_changed(name: String, value: Vector2) -> void:

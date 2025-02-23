@@ -102,7 +102,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.514421, -0.848298)
 mesh = SubResource("BoxMesh_oyb5w")
 skeleton = NodePath("../..")
 
-[node name="world-1" type="GridMap" parent="."]
+[node name="worlds" type="Node3D" parent="."]
+
+[node name="world-1" type="GridMap" parent="worlds"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1.59)
 mesh_library = ExtResource("8_hyn1e")
 cell_size = Vector3(0.125, 0.125, 0.125)
@@ -111,12 +113,12 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="world-1"]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="worlds/world-1"]
 transform = Transform3D(-0.205188, 1.78563, -0.877172, -0.0548172, 0.876416, 1.79691, 1.98869, 0.208394, -0.0409734, -1.32883, 3.0646, 0.750865)
 light_energy = 0.349
 shadow_enabled = true
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="world-1"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="worlds/world-1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.62198, 0.526866, 2.97999)
 light_energy = 0.396
 light_size = 0.038
@@ -127,41 +129,44 @@ distance_fade_shadow = 11.36
 distance_fade_length = 3.0
 omni_range = 1.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="world-1"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="worlds/world-1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.1058, 0.577815, 3.02698)
 light_energy = 0.396
 shadow_enabled = true
 distance_fade_enabled = true
 omni_range = 0.456
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="world-1"]
+[node name="OmniLight3D6" type="OmniLight3D" parent="worlds/world-1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.18643, 0.781162, 0.495886)
 omni_range = 1.0
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="world-1"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="worlds/world-1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.18308, 1.40201, -0.339432)
 omni_range = 1.0
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="world-1"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="worlds/world-1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.61682, 1.32683, 3.63232)
 omni_range = 1.0
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="world-1"]
+[node name="OmniLight3D7" type="OmniLight3D" parent="worlds/world-1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.674786, 0.490003, 0.934481)
 light_energy = 0.396
 omni_range = 0.308
 omni_attenuation = 0.811
 
-[node name="OmniLight3D" type="OmniLight3D" parent="world-1"]
+[node name="OmniLight3D" type="OmniLight3D" parent="worlds/world-1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.69313, 0.367514, 1.95894)
 light_energy = 0.396
 omni_range = 0.308
 omni_attenuation = 0.811
 
-[node name="Player" parent="world-1" instance=ExtResource("9_mqjri")]
+[node name="Player" parent="worlds/world-1" instance=ExtResource("9_mqjri")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.73782, 0.374251, 2.08402)
 
-[connection signal="button_pressed" from="XROrigin3D/LeftHand" to="world-1/Player" method="_on_left_hand_button_pressed"]
-[connection signal="input_vector2_changed" from="XROrigin3D/LeftHand" to="world-1/Player" method="_on_left_hand_input_vector_2_changed"]
-[connection signal="button_pressed" from="XROrigin3D/RightHand" to="world-1/Player" method="_on_right_hand_button_pressed"]
+[connection signal="button_pressed" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_button_pressed"]
+[connection signal="button_released" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_button_released"]
+[connection signal="input_vector2_changed" from="XROrigin3D/LeftHand" to="worlds/world-1/Player" method="_on_left_hand_input_vector_2_changed"]
+[connection signal="button_pressed" from="XROrigin3D/RightHand" to="." method="_on_right_hand_button_pressed"]
+[connection signal="button_released" from="XROrigin3D/RightHand" to="." method="_on_right_hand_button_released"]
+[connection signal="input_vector2_changed" from="XROrigin3D/RightHand" to="worlds/world-1/Player" method="_on_right_hand_input_vector_2_changed"]
 [connection signal="toggled" from="ARToggle" to="." method="_on_detector_toggled"]
