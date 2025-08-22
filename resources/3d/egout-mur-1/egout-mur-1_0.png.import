@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://betwceip7p681"
-path.s3tc="res://.godot/imported/water-1_0.png-b7a56839998f7587a237f1328a6adb5a.s3tc.ctex"
-path.etc2="res://.godot/imported/water-1_0.png-b7a56839998f7587a237f1328a6adb5a.etc2.ctex"
+uid="uid://b01pv8mvucqm1"
+path.s3tc="res://.godot/imported/egout-mur-1_0.png-fafb3dd9a57a021098c6fead424724b8.s3tc.ctex"
+path.etc2="res://.godot/imported/egout-mur-1_0.png-fafb3dd9a57a021098c6fead424724b8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "0f249a579adace63111e65252c3d252a"
+}
 
 [deps]
 
-source_file="res://resources/3d/water/water-1_0.png"
-dest_files=["res://.godot/imported/water-1_0.png-b7a56839998f7587a237f1328a6adb5a.s3tc.ctex", "res://.godot/imported/water-1_0.png-b7a56839998f7587a237f1328a6adb5a.etc2.ctex"]
+source_file="res://resources/3d/egout-mur-1/egout-mur-1_0.png"
+dest_files=["res://.godot/imported/egout-mur-1_0.png-fafb3dd9a57a021098c6fead424724b8.s3tc.ctex", "res://.godot/imported/egout-mur-1_0.png-fafb3dd9a57a021098c6fead424724b8.etc2.ctex"]
 
 [params]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b76ow8tad8mvr"]
+[gd_scene load_steps=15 format=3 uid="uid://b76ow8tad8mvr"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0usdb"]
 [ext_resource type="PackedScene" uid="uid://lo63a1gw1o0q" path="res://detector.tscn" id="2_jeg7f"]
+[ext_resource type="MeshLibrary" uid="uid://bnyh2k5f8dfyd" path="res://resources/3d/meshlib/meshlib-egout.tres" id="5_ljvxl"]
 [ext_resource type="MeshLibrary" uid="uid://4r47c1qcq835" path="res://resources/3d/meshlib/meshlib.tres" id="8_hyn1e"]
 [ext_resource type="PackedScene" uid="uid://d0o8y261340hy" path="res://player/player.tscn" id="9_mqjri"]
 
@@ -106,6 +107,7 @@ skeleton = NodePath("../..")
 
 [node name="world-1" type="GridMap" parent="worlds"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1.59)
+visible = false
 mesh_library = ExtResource("8_hyn1e")
 cell_size = Vector3(0.125, 0.125, 0.125)
 data = {
@@ -162,6 +164,15 @@ omni_attenuation = 0.811
 
 [node name="Player" parent="worlds/world-1" instance=ExtResource("9_mqjri")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.73782, 0.374251, 2.08402)
+
+[node name="egout-1" type="GridMap" parent="worlds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0813518, 0)
+mesh_library = ExtResource("5_ljvxl")
+cell_size = Vector3(0.125, 0.125, 0.125)
+data = {
+"cells": PackedInt32Array(65529, 0, 655363, 65531, 0, 655363, 65533, 0, 655363, 65535, 0, 655363, 1, 0, 655363, 131066, 65532, 655361, 131068, 65532, 655361, 131070, 65532, 655361, 65536, 65532, 655361, 65538, 65532, 655361, 4, 65533, 3, 6, 65533, 3, 8, 65533, 3, 10, 65533, 3, 12, 65533, 3, 14, 65533, 3, 16, 65533, 3, 18, 65533, 3, 65528, 65533, 3, 65526, 65533, 3, 65524, 65533, 3, 131060, 65533, 3, 196597, 65533, 3, 196595, 65533, 3, 262134, 65533, 3, 262132, 65533, 3, 327669, 65533, 3, 327671, 65533, 3, 327673, 65533, 3, 327667, 65533, 2, 393203, 65533, 2, 458739, 65533, 2, 524275, 65533, 2, 589811, 65533, 2, 655348, 65533, 3, 655350, 65533, 2, 655352, 65533, 3, 655354, 65533, 3, 655356, 65533, 3, 655358, 65533, 3, 589824, 65533, 3, 589826, 65533, 3, 589828, 65533, 3, 589830, 65533, 3, 589832, 65533, 3, 589834, 65533, 3, 589836, 65533, 3, 589838, 65533, 3, 131063, 65531, 1, 131061, 65531, 1, 65539, 65531, 1, 65541, 65531, 1, 65543, 65531, 1, 65545, 65531, 1, 65546, 65531, 1, 65548, 65531, 1, 65550, 65531, 1, 65552, 65531, 1, 196614, 65531, 1, 196612, 65531, 1, 196610, 65531, 1, 196616, 65531, 1, 196618, 65531, 1, 196608, 65531, 1, 262142, 65531, 1, 262140, 65531, 1, 262138, 65531, 1, 393208, 65531, 1, 393210, 65531, 1, 393212, 65531, 1, 393215, 65532, 0, 458751, 65532, 0, 327681, 65532, 0, 393217, 65532, 0, 327682, 65531, 1, 327684, 65531, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 5, 0)
 
 [connection signal="button_pressed" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_button_pressed"]
 [connection signal="button_released" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_button_released"]

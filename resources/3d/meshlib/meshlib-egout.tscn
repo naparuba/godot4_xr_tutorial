@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv7oqhvhbjtf8"]
+
+[ext_resource type="PackedScene" uid="uid://bwp8m15stextt" path="res://resources/3d/egout-mur-1/egout-mur-1.gltf" id="1_kicxr"]
+[ext_resource type="PackedScene" uid="uid://c2jr274tnbh14" path="res://resources/3d/egout-mur-2/egout-mur-2.gltf" id="2_xupnj"]
+[ext_resource type="PackedScene" uid="uid://coh7hkunivh1h" path="res://resources/3d/egout-sol-1/egout-sol-1.gltf" id="3_8yx40"]
+[ext_resource type="PackedScene" uid="uid://pw4r2hnwo5fc" path="res://resources/3d/egout-sol-2/egout-sol-2.gltf" id="4_bqg2d"]
+
+[node name="Meshlib-egout" type="Node2D"]
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_kicxr")]
+
+[node name="blockbench_export2" parent="." instance=ExtResource("2_xupnj")]
+
+[node name="blockbench_export3" parent="." instance=ExtResource("3_8yx40")]
+
+[node name="blockbench_export4" parent="." instance=ExtResource("4_bqg2d")]

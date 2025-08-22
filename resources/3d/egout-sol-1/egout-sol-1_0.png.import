@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://betwceip7p681"
-path.s3tc="res://.godot/imported/water-1_0.png-b7a56839998f7587a237f1328a6adb5a.s3tc.ctex"
-path.etc2="res://.godot/imported/water-1_0.png-b7a56839998f7587a237f1328a6adb5a.etc2.ctex"
+uid="uid://b4pgffpwvd7vc"
+path.s3tc="res://.godot/imported/egout-sol-1_0.png-7be4981fdd44dd6d4a7fb3110937c5a8.s3tc.ctex"
+path.etc2="res://.godot/imported/egout-sol-1_0.png-7be4981fdd44dd6d4a7fb3110937c5a8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "47395b69b4e8743327c3564a7aec80b7"
+}
 
 [deps]
 
-source_file="res://resources/3d/water/water-1_0.png"
-dest_files=["res://.godot/imported/water-1_0.png-b7a56839998f7587a237f1328a6adb5a.s3tc.ctex", "res://.godot/imported/water-1_0.png-b7a56839998f7587a237f1328a6adb5a.etc2.ctex"]
+source_file="res://resources/3d/egout-sol-1/egout-sol-1_0.png"
+dest_files=["res://.godot/imported/egout-sol-1_0.png-7be4981fdd44dd6d4a7fb3110937c5a8.s3tc.ctex", "res://.godot/imported/egout-sol-1_0.png-7be4981fdd44dd6d4a7fb3110937c5a8.etc2.ctex"]
 
 [params]
 
